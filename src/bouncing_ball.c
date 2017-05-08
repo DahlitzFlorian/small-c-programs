@@ -2,10 +2,11 @@
     Made to be used under windows 10
 ---------------------------------------------------------*/
 #include <stdio.h>
+#include "console.h"
 
 #define DELAY       100000000L
-#define CLS         printf("\033[2J")
-#define LOCATE(z,s) printf("\033[%d;%dH", z, s)
+#define CLS         cls()
+#define LOCATE(z,s) setCursor(z,s)
 
 
 int main()
@@ -19,7 +20,8 @@ int main()
     LOCATE(25, 1);
     printf("----------------------------------------"
             "----------------------------------------");
-    
+    fflush(stdout);
+
     while(1)
     {
         LOCATE(y, x);
