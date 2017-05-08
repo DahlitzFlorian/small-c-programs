@@ -29,14 +29,14 @@ int main()
     // x-axis
     LOCATE(RZ, 1);
     for(column = 1; column < 78; ++column)
-        (column - CZ) % 8 ? printf("Ä") : printf("\197"), fflush(stdout);
+        (column - CZ) % 8 ? putchar('|') : putchar('-');
     putchar('\020');
     LOCATE(RZ - 1, CZ + 64);
-    printf("2\227    x");
+    printf("2 PI    x");
 
     // y-axis
     for(row = 6; row < 25; ++row)
-        LOCATE(row, CZ), printf("\197"), fflush(stdout);
+        LOCATE(row, CZ), putchar('-');
     LOCATE(5, CZ);
     printf("\036 sin(x)");
 
