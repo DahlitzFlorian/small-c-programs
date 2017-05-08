@@ -1,0 +1,4 @@
+1     This is a simple text
+2     which contains multiple rows
+3     and will include numbered rows after
+4     program run!

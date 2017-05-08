@@ -1,0 +1,4 @@
+This is a simple text
+which contains multiple rows
+and will include numbered rows after
+program run!
