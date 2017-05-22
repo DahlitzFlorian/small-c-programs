@@ -1,12 +1,12 @@
 /*  Sorts text-lines lexicographically
-    In this example MAXLINES equals 1000 but it can be
-    changed to whatever number e.g. 2541.
+    In this example MAXLINES equals 10 but it can be
+    changed to whatever number e.g. 1000.
 ---------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXLINES    1000
+#define MAXLINES    10
 #define MAX         512
 
 // prototypes
@@ -25,10 +25,10 @@ int main()
     while(count < MAXLINES && (line[count] = getline()) != NULL)
         ++count;
 
-    if(count == MAXLINES)
+    if(count > MAXLINES)
         error_exit(1);
-    else if(!feof(stdin))
-        error_exit(2);
+/*  else if(!feof(stdin))       // only needed if input not
+        error_exit(2); */       // through command prompt
     else if(count == 0)
         error_exit(3);
     
@@ -36,7 +36,7 @@ int main()
     {
         mini = i;
         for(j = i + 1; j < count; ++j)
-            if(strcmp(line[i], line[mini]) < 0)
+            if(strcmp(line[j], line[mini]) < 0)
                 mini = j;
         
         help = line[i];
